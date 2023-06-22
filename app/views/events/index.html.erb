@@ -1,10 +1,12 @@
-
-<h1>Events</h1>
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <h2><%= event.description %></h2>
-      <h3><%= event.start_time %></h3>
-    </li>
-  <% end %>
-</ul>
+<div class="container-custom">
+  <div class="index-columns">
+    <ul>
+      <% @events.each do |event| %>
+        <li class="index-card">
+          <h2><%= event.description %></h2>
+          <h3><%= event.start_time %></h3>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

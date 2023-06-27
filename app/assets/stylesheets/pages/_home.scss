@@ -18,6 +18,7 @@
   padding: 20px;
   margin-bottom: 20px;
   height: 144px;
+  border-radius: 4px;
   background:
     linear-gradient(120deg, transparent, $green, white),
     url("https://copyrightservice.co.uk/_f/7615/9922/2304/pexels-thibault-trillet-167636.jpg");
@@ -25,6 +26,15 @@
   align-items: center;
   h2 {
     font-size: 40px;
-    text-shadow: 0px 0px 4px $blue;
+    text-shadow: 0 0 4px $blue;
+  }
+}
+
+.index-card:hover {
+  transition: 0.3s;
+  scale: 102%;
+  box-shadow: 0px 0px 12px $gray-shadow;
+  h2 {
+    text-shadow: 0 0 4px $green;
   }
 }

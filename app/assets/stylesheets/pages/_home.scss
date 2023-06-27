@@ -12,18 +12,19 @@
 }
 
 .index-card {
+  font-family: $body-font;
   list-style: none;
   display: flex;
-  padding: 12px;
+  padding: 20px;
   margin-bottom: 20px;
   height: 144px;
   background:
-    linear-gradient(120deg, transparent, white, white),
+    linear-gradient(120deg, transparent, $green, white),
     url("https://copyrightservice.co.uk/_f/7615/9922/2304/pexels-thibault-trillet-167636.jpg");
   justify-content: space-between;
   align-items: center;
   h2 {
     font-size: 40px;
-    text-shadow: 0px 0px 4px white;
+    text-shadow: 0px 0px 4px $blue;
   }
 }

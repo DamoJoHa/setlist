@@ -6,25 +6,56 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+p "Starting Cleanup"
+Event.delete_all
+Act.delete_all
+Venue.delete_all
+User.delete_all
+p "Cleanup Successful"
+p ""
+
+p "Creating Users"
 user = User.new
 user.username = "owner"
 user.email = "owner@test.mail"
 user.password = "password"
 user.save
+p "Owner created (1/3)"
 
 artist = User.new
 artist.username = "artist"
 artist.email = "artist@test.mail"
 artist.password = "password"
 artist.save
+p "Artist created (2/3)"
 
+artist2 = User.new
+artist2.username = "dave"
+artist2.email = "dave@test.mail"
+artist2.password = "password"
+artist2.save
+p "Artist2 created (3/3)"
+p ""
+
+p "Creating Acts"
 act = Act.new
 act.name = "Blazing Glory"
 act.description = "A new group with an old sound, playing all the songs you love."
 act.genre = "Rock"
 act.user = artist
 act.save
+p "Created Blazing Glory (1/2)"
 
+act2 = Act.new
+act2.name = "Jewel's Fern"
+act2.description = "Technosynth nightmares."
+act2.genre = "Electronic"
+act2.user = artist2
+act2.save
+p "Created Jewel's Fern (2/2)"
+p ""
+
+p "Creating Venue"
 venue = Venue.new
 venue.address = "Somewhere"
 venue.description = "A real dump."
@@ -32,11 +63,26 @@ venue.name = "The Chum Bucket"
 venue.category = "restaurant"
 venue.user = user
 venue.save
+p "Venue Created"
+p ""
 
+p "Creating Events"
 event = Event.new
 event.start_time = Time.now
+event.title = "New Year's Show"
 event.end_time = Time.now + 100
-event.description = "Blazing GLory at the Chum Bucket"
+event.description = "Blazing Glory at the Chum Bucket"
 event.act = act
 event.venue = venue
 event.save
+
+event2 = Event.new
+event2.start_time = Time.now + 10000
+event2.title = "The Hangover"
+event2.end_time = Time.now + 11000
+event2.description = "Let your ears bleed to the sounds of a dozen beached whales dying."
+event2.act = act2
+event2.venue = venue
+event2.save
+p "Events Created"
+p "Done"

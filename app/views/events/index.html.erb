@@ -4,9 +4,14 @@
       <% @events.each do |event| %>
         <li class="index-card">
           <h2><%= event.title %></h2>
-          <h3><%= event.start_time %></h3>
+          <h3><%= event.local_start_time %> - <%= event.local_end_time %></h3>
         </li>
       <% end %>
     </ul>
+    <div style="width: 600px; height: 90vh; border-radius: 4px"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>

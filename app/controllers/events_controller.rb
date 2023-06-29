@@ -3,5 +3,15 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    marked = @events.filter do |event|
+      event.venue.geocoded?
+    end
+    @markers = marked.map{ |event|
+      {
+        lat: event.venue.latitude,
+        lng: event.venue.longitude
+      }
+    }
+    raise
   end
 end

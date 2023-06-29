@@ -57,13 +57,23 @@ p ""
 
 p "Creating Venue"
 venue = Venue.new
-venue.address = "Somewhere"
-venue.description = "A real dump."
-venue.name = "The Chum Bucket"
+venue.address = "48 Main St, Warwick, NY"
+venue.description = "Dog friendly, with classic american favorites."
+venue.name = "Fetch"
 venue.category = "restaurant"
 venue.user = user
 venue.save
-p "Venue Created"
+p "Venue 1 Created"
+
+p "Creating Venue"
+venue2 = Venue.new
+venue2.address = "5 1/2 South St, Warwick, NY 10990, United States"
+venue2.description = "Coffee, sweets, breakfasts and wraps."
+venue2.name = "Tuscan Cafe"
+venue2.category = "cafe"
+venue2.user = user
+venue2.save
+p "Venue 2 Created"
 p ""
 
 p "Creating Events"
@@ -71,9 +81,9 @@ event = Event.new
 event.start_time = Time.now
 event.title = "New Year's Show"
 event.end_time = Time.now + 100
-event.description = "Blazing Glory at the Chum Bucket"
+event.description = "Blazing Glory at the Tuscan"
 event.act = act
-event.venue = venue
+event.venue = venue2
 event.save
 
 event2 = Event.new

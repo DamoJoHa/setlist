@@ -12,6 +12,5 @@ class EventsController < ApplicationController
         lng: event.venue.longitude
       }
     }
-    raise
   end
 end

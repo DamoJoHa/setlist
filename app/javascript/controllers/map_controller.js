@@ -2,22 +2,30 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="map"
 export default class extends Controller {
+  static targets = ["map"]
   static values = {
     apiKey: String,
     markers: Array
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
-
+    mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
-      container: this.element,
+      container: this.mapTarget,
       style: "mapbox://styles/djhallengren/cljh6pwol00f301pa2vlo57h4"
     })
 
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
   }
+
+  focus(event) {
+    const focus = event.currentTarget;
+    const point = new mapboxgl.LngLat(focus.dataset.lon, focus.dataset.lat)
+    this.map.setCenter(point)
+  }
+
+  // PRIVATE METHODS
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {

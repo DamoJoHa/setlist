@@ -1,17 +1,17 @@
 <div class="container-custom">
-  <div class="index-columns">
+  <div class="index-columns"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <ul>
       <% @events.each do |event| %>
-        <li class="index-card">
+        <li class="index-card" data-action="click->map#focus" data-lat="<%= event.venue.latitude =%>" data-lon="<%= event.venue.longitude =%>">
           <h2><%= event.title %></h2>
           <h3><%= event.local_start_time %> - <%= event.local_end_time %></h3>
         </li>
       <% end %>
     </ul>
-    <div style="width: 600px; height: 90vh; border-radius: 4px"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div style="width: 600px; height: 90vh; border-radius: 4px" data-map-target="map">
     </div>
   </div>
 </div>

@@ -50,6 +50,7 @@ gem "sassc-rails"
 
 # CUSTOM GEMS
 gem "geocoder"
+gem "faker"
 # END
 
 gem "devise"

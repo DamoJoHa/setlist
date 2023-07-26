@@ -11,6 +11,6 @@ class EventsController < ApplicationController
         lat: event.venue.latitude,
         lng: event.venue.longitude
       }
-    }
+    }.uniq
   end
 end

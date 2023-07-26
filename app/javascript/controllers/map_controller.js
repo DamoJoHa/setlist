@@ -20,9 +20,9 @@ export default class extends Controller {
   }
 
   focus(event) {
-    const focus = event.currentTarget;
-    const point = new mapboxgl.LngLat(focus.dataset.lon, focus.dataset.lat)
-    this.map.setCenter(point)
+    const lon = event.currentTarget.dataset.lon;
+    const lat = event.currentTarget.dataset.lat;
+    this.map.flyTo({center: {lon, lat}, duration: 3000, zoom: 16, curve: 1.42})
   }
 
   // PRIVATE METHODS

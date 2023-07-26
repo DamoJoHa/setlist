@@ -3,9 +3,9 @@
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <ul>
+    <ul data-controller="event-list" data-event-list-target="list">
       <% @events.each do |event| %>
-        <li class="index-card" data-action="click->map#focus" data-lat="<%= event.venue.latitude =%>" data-lon="<%= event.venue.longitude =%>">
+        <li class="index-card" data-action="click->map#focus click->event-list#highlight" data-lat="<%= event.venue.latitude =%>" data-lon="<%= event.venue.longitude =%>">
           <h2><%= event.title %></h2>
           <h3><%= event.local_start_time %> - <%= event.local_end_time %></h3>
         </li>

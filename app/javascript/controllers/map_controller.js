@@ -20,6 +20,7 @@ export default class extends Controller {
   }
 
   focus(event) {
+    // Move map focus
     const lon = event.currentTarget.dataset.lon;
     const lat = event.currentTarget.dataset.lat;
     this.map.flyTo({center: {lon, lat}, duration: 3000, zoom: 16, curve: 1.42})

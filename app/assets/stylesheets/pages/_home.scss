@@ -20,13 +20,13 @@
   height: 144px;
   border-radius: 4px;
   background:
-    linear-gradient(120deg, transparent, $green, white),
+    linear-gradient(120deg, transparent, transparent, $orange, white),
     url("https://copyrightservice.co.uk/_f/7615/9922/2304/pexels-thibault-trillet-167636.jpg");
   justify-content: space-between;
   align-items: center;
   h2 {
     font-size: 40px;
-    text-shadow: 0 0 4px $blue;
+    text-shadow: 0 0 4px white;
   }
 }
 
@@ -34,11 +34,16 @@
   transition: 0.3s;
   scale: 102%;
   box-shadow: 0px 0px 12px $gray-shadow;
-  h2 {
-    text-shadow: 0 0 4px $green;
-  }
 }
 
-.green-shadow {
-  box-shadow: 0 0 12px $green !important;
+.red-shadow {
+  box-shadow: 0 0 12px $red !important;
+}
+
+#map {
+  width: 600px;
+  height: 90vh;
+  border-radius: 4px;
+  position: sticky;
+  top: 24px;
 }

@@ -13,11 +13,11 @@ export default class extends Controller {
     const listItems = Array.from(this.listTarget.children)
     // console.log(listItems);
     listItems.forEach(item => {
-      item.classList.remove("green-shadow")
+      item.classList.remove("red-shadow")
     })
 
     //add highlight to clicked item
     console.log("highlighting")
-    event.currentTarget.classList.add("green-shadow")
+    event.currentTarget.classList.add("red-shadow")
   }
 }

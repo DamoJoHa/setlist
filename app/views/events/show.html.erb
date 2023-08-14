@@ -1,4 +1,16 @@
 <div class="centered-column">
-  <h1><%= @event.title %></h1>
-
+  <div class="flex-row">
+    <h1><%= @event.title %></h1>
+    <div class="square-date-box">
+      <p class="date-head"><%= @event.start_time.localtime.strftime('%d %b') %></p>
+      <p class ="time-head"><%= @event.local_start_time %> - <%= @event.local_end_time %></p>
+    </div>
+  </div>
+  <div class="event-show-grid">
+    <div id="rsvp-box"></div>
+    <div id="about-box">
+      <h2>About</h2>
+      <p><%= @event.description %></p>
+    </div>
+  </div>
 </div>

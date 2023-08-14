@@ -1,4 +1,52 @@
 h1 {
-  font-family: $body-font;
   font-size: 40px;
+  margin: 0;
+  color: $gray;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.square-date-box {
+  color: $off-white;
+  height: 120px;
+  width: 120px;
+  background-color: $gray-shadow;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .date-head {
+    font-size: 28px;
+    margin: 0 0 8px 0;
+  }
+  .time-head {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.event-show-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "b a a";
+  h2 {
+    margin: 16px 0;
+  }
+  div {
+    padding: 12px;
+  }
+  #rsvp-box {
+    grid-area: b;
+    background-color: $gray-shadow;
+  }
+  #about-box {
+    grid-area: a;
+  }
 }

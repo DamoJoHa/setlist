@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :act
   belongs_to :venue
+  has_many :users, through: :users_events
 
   def local_start_date
     start_time.localtime.strftime('%a %d %B, %Y')

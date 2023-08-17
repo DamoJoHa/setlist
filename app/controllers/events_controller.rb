@@ -13,4 +13,8 @@ class EventsController < ApplicationController
       }
     }.uniq
   end
+
+  def show
+    @event = Event.find(params[:id])
+  end
 end

@@ -1,0 +1,49 @@
+.navbar {
+  width: -webkit-fill-available;
+  height: 60px;
+  background-color: $darkgray;
+  border-bottom: 1px solid $off-white;
+  color: $off-white;
+  a {
+    text-decoration: none;
+    color: $off-white;
+  }
+  padding: 0px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: centergit ;
+}
+
+#homelink {
+  font-family: $headers-font;
+  font-size: 52px;
+}
+
+.button-pink {
+  border: 2px solid $pink;
+  color: $pink !important;
+}
+
+.button-blue {
+  border: 2px solid $blue;
+  color: $blue !important;
+}
+
+.button-nav {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: $body-font;
+  transition: ease-in 0.2s;
+}
+
+.button-pink:hover {
+  background-color: $pink-shadow;
+  color: $darkgray !important;
+  font-weight: bolder;
+}
+
+.button-blue:hover {
+  background-color: $blue-shadow;
+  color: $darkgray !important;
+  font-weight: bolder;
+}

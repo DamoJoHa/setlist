@@ -9,14 +9,18 @@
     color: $off-white;
   }
   padding: 0px 24px;
+  position:sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
-  align-items: centergit ;
+  align-items: center;
+  z-index: 1;
 }
 
 #homelink {
   font-family: $headers-font;
   font-size: 52px;
+  margin-top: 12px;
 }
 
 .button-pink {
@@ -33,7 +37,7 @@
   padding: 8px 12px;
   border-radius: 12px;
   font-family: $body-font;
-  transition: ease-in 0.2s;
+  transition: ease-in 0.1s;
 }
 
 .button-pink:hover {

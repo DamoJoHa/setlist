@@ -1,0 +1,30 @@
+// Input div for simple forms gem
+.input {
+  display: flex;
+  flex-direction: column;
+  input {
+    width: 100%;
+    margin: 12px 0px;
+    background-color: blue;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: $body-font;
+  font-size: 16px;
+  transition: ease-in 0.1s;
+  border: 2px solid $pink;
+  color: $pink;
+}
+.btn:hover {
+  background-color: $pink-shadow;
+  color: $darkgray !important;
+  font-weight: bold;
+}
+
+.boolean {
+  flex-direction: flex;
+}

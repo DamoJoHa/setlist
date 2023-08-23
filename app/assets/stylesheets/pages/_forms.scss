@@ -1,11 +1,28 @@
 // Input div for simple forms gem
+.simple_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-inputs {
+  width: 80%;
+}
+
+.form-actions {
+  width: 40%;
+  margin-top: 40px;
+}
 .input {
   display: flex;
   flex-direction: column;
+  margin-bottom: 12px;
   input {
-    width: 100%;
     margin: 12px 0px;
-    background-color: blue;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-family: $body-font;
   }
 }
 
@@ -25,6 +42,11 @@
   font-weight: bold;
 }
 
-.boolean {
-  flex-direction: flex;
+label.boolean {
+  //MIGHT WANT CUSTOM CHECKBOX?
+  display: flex;
+  align-items: center;
+  input {
+    margin-right: 12px;
+  }
 }

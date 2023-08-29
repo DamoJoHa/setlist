@@ -18,6 +18,7 @@ body {
   background-color: $gray;
   margin: 0px;
   font-family: $body-font;
+
 }
 
 .container-custom {
@@ -40,4 +41,13 @@ body {
 
 .wide-column {
   width: 85% !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+p {
+  font-family: $para-font;
+  line-height: 150%;
 }

@@ -1,4 +1,10 @@
 // Input div for simple forms gem
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .simple_form {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,11 @@
+<div class="navbar">
+  <%= link_to "Setlist", root_path, id: "homelink" %>
+  <div>
+    <% if user_signed_in? %>
+      <p>Welcome</p>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "button-nav button-pink"%>
+      <%= link_to "Sign Up", new_user_registration_path, class: "button-nav button-blue" %>
+    <% end %>
+  </div>
+</div>

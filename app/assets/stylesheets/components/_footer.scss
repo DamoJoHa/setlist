@@ -1,0 +1,31 @@
+.footer {
+  width: -webkit-fill-available;
+  height: 120px;
+  background-color: $darkgray;
+  border-top: 1px solid $off-white;
+  color: $off-white;
+  a {
+    text-decoration: none;
+    color: $off-white;
+  }
+  padding: 0px 24px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .links {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+  }
+}
+
+#about-link {
+  cursor: help;
+}
+
+#author-text {
+  color: $lightgray;
+}

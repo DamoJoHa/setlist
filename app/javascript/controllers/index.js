@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AboutBoxController from "./about_box_controller"
+application.register("about-box", AboutBoxController)
+
 import EventListController from "./event_list_controller"
 application.register("event-list", EventListController)
 

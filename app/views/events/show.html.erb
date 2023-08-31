@@ -13,4 +13,6 @@
       <p><%= @event.description %></p>
     </div>
   </div>
+  <p><%= @event.user_count %> Attending</p>
+  <%= link_to "Attend", toggle_attend_path(@event) %>
 </div>

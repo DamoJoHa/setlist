@@ -51,8 +51,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
   end
 
   create_table "users_events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_users_events_on_event_id"
+    t.index ["user_id"], name: "index_users_events_on_user_id"
   end
 
   create_table "venues", force: :cascade do |t|
@@ -71,5 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
   add_foreign_key "acts", "users"
   add_foreign_key "events", "acts"
   add_foreign_key "events", "venues"
+  add_foreign_key "users_events", "events"
+  add_foreign_key "users_events", "users"
   add_foreign_key "venues", "users"
 end

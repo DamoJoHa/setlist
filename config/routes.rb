@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
 
   resources :events, only: [:show]
-  get "/events/:id/toggle_attend", to: "events#toggle_attend", as: "toggle_attend"
+  resources :acts, only: [:show]
+  get "/events/:id/add_attend", to: "events#add_attend", as: "add_attend"
+  get "/events/:id/remove_attend", to: "events#remove_attend", as: "remove_attend"
 
   resources :venues, only: [:create, :new]
 end

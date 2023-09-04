@@ -18,7 +18,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def toggle_attend
+  def add_attend
     Event.find(params[:id]).users.push(current_user)
+    redirect_to event_path(params[:id])
+  end
+
+  def remove_attend
+    Event.find(params[:id]).users.delete(current_user)
+    redirect_to event_path(params[:id])
   end
 end

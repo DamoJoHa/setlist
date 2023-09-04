@@ -14,5 +14,9 @@
     </div>
   </div>
   <p><%= @event.user_count %> Attending</p>
-  <%= link_to "Attend", toggle_attend_path(@event) %>
+  <% if @event.users.include?(current_user) %>
+    <%= link_to "Cancel", remove_attend_path(@event) %>
+  <% else %>
+    <%= link_to "Attend", add_attend_path(@event) %>
+  <% end %>
 </div>

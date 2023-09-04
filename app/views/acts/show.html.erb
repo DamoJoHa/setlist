@@ -1,3 +1,6 @@
 <div class="centered-column wide-column">
   <h1><%= @act.name %></h1>
+  <p><%= @act.follower_count %> Following</p>
+  <%= link_to "Follow", add_favorite_path(@act) %>
+  <%= link_to "Unfollow", remove_favorite_path(@act) %>
 </div>

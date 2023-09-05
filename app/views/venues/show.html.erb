@@ -1,0 +1,8 @@
+<div class="centered-column wide-column">
+  <h1><%= @venue.name %></h1>
+  <ul class="events">
+    <% @venue.events.each do |event| %>
+      <li><%= event.title %></li>
+    <% end %>
+  </ul>
+</div>

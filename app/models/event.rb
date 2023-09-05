@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :act
   belongs_to :venue
+  has_many :users_events
   has_many :users, through: :users_events
 
   def local_start_date
@@ -13,5 +14,9 @@ class Event < ApplicationRecord
 
   def local_end_time
     end_time.localtime.strftime('%H:%M')
+  end
+
+  def user_count
+    users.count
   end
 end

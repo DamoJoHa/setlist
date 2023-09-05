@@ -10,8 +10,8 @@ require "csv"
 filepath = "storage/NYData.csv"
 ADDRESSES = []
 CSV.foreach(filepath, headers: :first_row) do |row|
-  if row['Address State'] = "NY" && !row['Addrewss City'].empty?
-    ADDRESSES.push("#{row['Address Building']}, #{row['Address Street Name']}, #{row['Adress City']}, NY, #{row['Address ZIP']}")
+  if row['Address State'] == "NY" && row['Address City']
+    ADDRESSES.push("#{row['Address Building']}, #{row['Address Street Name']}, #{row['Address City']}, NY, #{row['Address ZIP']}")
   end
 end
 

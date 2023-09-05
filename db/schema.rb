@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_121626) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_acts_on_user_id"
+  end
+
+  create_table "acts_users", force: :cascade do |t|
+    t.bigint "act_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["act_id"], name: "index_acts_users_on_act_id"
+    t.index ["user_id"], name: "index_acts_users_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -51,8 +60,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
   end
 
   create_table "users_events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_users_events_on_event_id"
+    t.index ["user_id"], name: "index_users_events_on_user_id"
+  end
+
+  create_table "users_venues", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "venue_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_users_venues_on_user_id"
+    t.index ["venue_id"], name: "index_users_venues_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|
@@ -69,7 +91,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_160926) do
   end
 
   add_foreign_key "acts", "users"
+  add_foreign_key "acts_users", "acts"
+  add_foreign_key "acts_users", "users"
   add_foreign_key "events", "acts"
   add_foreign_key "events", "venues"
+  add_foreign_key "users_events", "events"
+  add_foreign_key "users_events", "users"
+  add_foreign_key "users_venues", "users"
+  add_foreign_key "users_venues", "venues"
   add_foreign_key "venues", "users"
 end

@@ -1,6 +1,10 @@
 <div class="centered-column wide-column">
   <div class="flex-row">
-    <h1><%= @event.title %></h1>
+    <div>
+      <h1><%= @event.title %></h1>
+      <i class="fa-solid fa-guitar"></i> <%= link_to @event.act.name, act_path(@event.act) %>
+      <i class="fa-solid fa-location-dot"></i> <%= link_to @event.venue.name, venue_path(@event.venue) %>
+    </div>
     <div class="square-date-box">
       <p class="date-head"><%= @event.start_time.localtime.strftime('%d %b') %></p>
       <p class ="time-head"><%= @event.local_start_time %> - <%= @event.local_end_time %></p>
@@ -13,4 +17,10 @@
       <p><%= @event.description %></p>
     </div>
   </div>
+  <p><%= @event.user_count %> Attending</p>
+  <% if @event.users.include?(current_user) %>
+    <%= link_to "Cancel", remove_attend_path(@event) %>
+  <% else %>
+    <%= link_to "Attend", add_attend_path(@event) %>
+  <% end %>
 </div>

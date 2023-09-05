@@ -1,11 +1,17 @@
 <div class="centered-column wide-column">
   <h1><%= @act.name %></h1>
   <p><%= @act.follower_count %> Following</p>
-  <% if @act.users.include?(current_user) %>
-    <%= link_to "Unfollow", remove_favorite_path(@act) %>
-  <% else %>
-    <%= link_to "Follow", add_favorite_path(@act) %>
-  <% end %>
+  <div class="favorite-block">
+    <% if @act.users.include?(current_user) %>
+      <%= link_to remove_favorite_act_path(@act) do %>
+        <i class="fa-solid fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to add_favorite_act_path(@act) do %>
+        <i class="fa-regular fa-heart"></i>
+      <% end %>
+    <% end %>
+  </div>
   <ul class="events">
     <% @act.events.each do |event| %>
       <li><%= event.title %></li>

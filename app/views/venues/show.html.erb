@@ -5,4 +5,15 @@
       <li><%= event.title %></li>
     <% end %>
   </ul>
+  <div class="favorite-block">
+    <% if @venue.users.include?(current_user) %>
+      <%= link_to remove_favorite_venue_path(@venue) do %>
+        <i class="fa-solid fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to add_favorite_venue_path(@venue) do %>
+        <i class="fa-regular fa-heart"></i>
+      <% end %>
+    <% end %>
+  </div>
 </div>

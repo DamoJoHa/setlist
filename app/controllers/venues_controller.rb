@@ -18,6 +18,16 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
   end
 
+  def add_favorite
+    Venue.find(params[:id]).users.push(current_user)
+    redirect_back_or_to root_path
+  end
+
+  def remove_favorite
+    Venue.find(params[:id]).users.delete(current_user)
+    redirect_back_or_to root_path
+  end
+
   private
 
   def venue_params

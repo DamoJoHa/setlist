@@ -8,7 +8,7 @@
         <li class="index-card" data-action="click->map#focus click->event-list#highlight" data-lat="<%= event.venue.latitude =%>" data-lon="<%= event.venue.longitude =%>">
           <h2><%= event.title %></h2>
           <div>
-          <h3><%= event.local_start_time %> - <%= event.local_end_time %></h3>
+          <p class="time-text"><%= event.local_start_time %></p>
           <%= link_to "Details", event_path(event) %>
           </div>
         </li>

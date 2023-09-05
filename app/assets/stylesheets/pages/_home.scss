@@ -17,7 +17,7 @@
   height: 144px;
   border: 1px solid $purple;
   border-radius: 8px;
-  background: $off-white;
+  background: radial-gradient(2000px at 0px 12px, $off-white, transparent);
   justify-content: space-between;
   align-items: center;
   h2 {

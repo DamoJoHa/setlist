@@ -24,6 +24,6 @@ export default class extends Controller {
   // this relies on a non-standard feature
   followmouse(event) {
     // console.log(event.layerX, event.layerY)
-    event.currentTarget.style.background = `radial-gradient(2000px at ${event.layerX}px ${event.layerY}px, #E9E6FF, transparent)`
+    event.currentTarget.style.background = `radial-gradient(1500px at ${event.layerX}px ${event.layerY}px, #E9E6FF, transparent)`
   }
 }

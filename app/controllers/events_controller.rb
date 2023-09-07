@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, except: :toggle_attend
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @events = Event.all
@@ -19,12 +19,12 @@ class EventsController < ApplicationController
   end
 
   def add_attend
-    if current_user
+    # if current_user
       Event.find(params[:id]).users.push(current_user)
       redirect_to event_path(params[:id])
-    else
-      redirect_to new_user_session_path
-    end
+    # else
+    #   redirect_to new_user_session_path
+    # end
   end
 
   def remove_attend

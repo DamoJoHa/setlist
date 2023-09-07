@@ -1,4 +1,6 @@
 class ActsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
   def show
     @act = Act.find(params[:id])
   end

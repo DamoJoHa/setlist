@@ -1,4 +1,4 @@
-<div class="centered-column wide-column">
+<div class="centered-column">
   <div class="title-row">
     <div class="title-column">
       <h1><%= @event.title %></h1>
@@ -10,7 +10,10 @@
       <p class ="time-head"><%= @event.local_start_time %> - <%= @event.local_end_time %></p>
     </div>
   </div>
-  <div class="event-show-grid">
+  <div class="event-show-grid"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="rsvp-block rounded sticky">
       <h2>RSVP</h2>
       <% if @event.user_count == 0 %>
@@ -32,5 +35,10 @@
       <h2>About</h2>
       <p><%= @event.description %></p>
     </div>
+    <div class="extra-block">
+      <h2>Meet the act!</h2>
+      <p><%= @event.act.description %></p>
+    </div>
+    <div id="map" class="map-block rounded" data-map-target="map"></div>
   </div>
 </div>

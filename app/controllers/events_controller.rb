@@ -3,10 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    marked = @events.filter do |event|
-      event.venue.geocoded?
-    end
-    @markers = marked.map{ |event|
+    @markers = @events.map{ |event|
       {
         lat: event.venue.latitude,
         lng: event.venue.longitude
@@ -16,6 +13,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @markers = [{ lat: @event.venue.latitude, lng: @event.venue.longitude }]
   end
 
   def add_attend

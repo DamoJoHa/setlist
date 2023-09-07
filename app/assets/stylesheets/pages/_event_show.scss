@@ -7,6 +7,7 @@ h1 {
 .title-row {
   display: grid;
   grid-template-columns: 1fr 120px;
+  margin-bottom: 48px;
 }
 
 .title-column {
@@ -40,11 +41,11 @@ h1 {
 }
 
 .event-show-grid {
-  margin-top: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px;
+  grid-template-columns: auto auto 250px;
   grid-template-areas:
-    "a a b";
+    "a a b"
+    "c d b";
   h2 {
     margin: 16px 0;
   }
@@ -65,5 +66,16 @@ h1 {
   .about-block {
     grid-area: a;
     padding: 24px;
+    padding-left: 0;
+    min-height: 224px;
+  }
+  .map-block {
+    grid-area: c;
+    width: 300px;
+    min-height: 400px;
+  }
+  .extra-block {
+    grid-area: d;
+    margin-left: 24px;
   }
 }

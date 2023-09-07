@@ -4,10 +4,19 @@ h1 {
   color: $gray;
 }
 
-.flex-row {
+.title-row {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+}
+
+.title-column {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 1.4;
+  div i {
+    width: 16px;
+  }
 }
 
 .square-date-box {
@@ -33,20 +42,28 @@ h1 {
 .event-show-grid {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 250px;
   grid-template-areas:
-    "b a a";
+    "a a b";
   h2 {
     margin: 16px 0;
   }
-  div {
-    padding: 12px;
-  }
-  #rsvp-box {
+  .rsvp-block {
     grid-area: b;
-    background-color: $gray-shadow;
+    background-color: $darkgray;
+    color: $off-white;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 24px;
+    h2, p {
+      margin: 0px !important;
+      line-height: 2;
+    }
   }
-  #about-box {
+  .about-block {
     grid-area: a;
+    padding: 24px;
   }
 }

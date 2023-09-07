@@ -1,9 +1,9 @@
 <div class="centered-column wide-column">
-  <div class="flex-row">
-    <div>
+  <div class="title-row">
+    <div class="title-column">
       <h1><%= @event.title %></h1>
-      <i class="fa-solid fa-guitar"></i> <%= link_to @event.act.name, act_path(@event.act) %>
-      <i class="fa-solid fa-location-dot"></i> <%= link_to @event.venue.name, venue_path(@event.venue) %>
+      <div><i class="fa-solid fa-guitar"></i> <%= link_to @event.act.name, act_path(@event.act) %></div>
+      <div><i class="fa-solid fa-location-dot"></i> <%= link_to @event.venue.name, venue_path(@event.venue) %></div>
     </div>
     <div class="square-date-box">
       <p class="date-head"><%= @event.start_time.localtime.strftime('%d %b') %></p>
@@ -11,16 +11,26 @@
     </div>
   </div>
   <div class="event-show-grid">
-    <div id="rsvp-box"></div>
-    <div id="about-box">
+    <div class="rsvp-block rounded sticky">
+      <h2>RSVP</h2>
+      <% if @event.user_count == 0 %>
+        <div>
+          <p>No one is attending yet.</p>
+          <p>Be the first to RSVP!</p>
+        </div>
+      <% else %>
+        <p><%= @event.user_count %> Attending</p>
+      <% end %>
+      <% if @event.users.include?(current_user) %>
+        <%= link_to "Cancel", remove_attend_path(@event), class: "button-nav button-pink" %>
+      <% else %>
+        <%= link_to "Attend", add_attend_path(@event), class: "button-wide button-green"%>
+      <% end %>
+      
+    </div>
+    <div class="about-block">
       <h2>About</h2>
       <p><%= @event.description %></p>
     </div>
   </div>
-  <p><%= @event.user_count %> Attending</p>
-  <% if @event.users.include?(current_user) %>
-    <%= link_to "Cancel", remove_attend_path(@event) %>
-  <% else %>
-    <%= link_to "Attend", add_attend_path(@event) %>
-  <% end %>
 </div>

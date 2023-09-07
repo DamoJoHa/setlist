@@ -1,0 +1,45 @@
+.button-pink {
+  border: 2px solid $pink;
+  color: $pink !important;
+}
+
+.button-blue {
+  border: 2px solid $blue;
+  color: $blue !important;
+}
+
+.button-green {
+  border: 2px solid $green;
+  color: $green !important;
+}
+
+.button-nav {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: $body-font;
+  transition: ease-in 0.1s;
+}
+
+.button-wide {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: $body-font;
+  transition: ease-in 0.1s;
+  text-align: center;
+}
+
+.button-pink:hover {
+  background-color: $pink-shadow;
+  color: $darkgray !important;
+}
+
+.button-blue:hover {
+  background-color: $blue-shadow;
+  color: $darkgray !important;
+}
+
+.button-green:hover {
+  background-color: $green-shadow;
+  color: $darkgray !important;
+}

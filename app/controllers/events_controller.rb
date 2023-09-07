@@ -19,12 +19,8 @@ class EventsController < ApplicationController
   end
 
   def add_attend
-    # if current_user
-      Event.find(params[:id]).users.push(current_user)
-      redirect_to event_path(params[:id])
-    # else
-    #   redirect_to new_user_session_path
-    # end
+    Event.find(params[:id]).users.push(current_user)
+    redirect_to event_path(params[:id])
   end
 
   def remove_attend

@@ -22,11 +22,11 @@
         <p><%= @event.user_count %> Attending</p>
       <% end %>
       <% if @event.users.include?(current_user) %>
-        <%= link_to "Cancel", remove_attend_path(@event), class: "button-nav button-pink" %>
+        <%= link_to "Cancel", remove_attend_path(@event), class: "button-wide button-pink" %>
       <% else %>
         <%= link_to "Attend", add_attend_path(@event), class: "button-wide button-green"%>
       <% end %>
-      
+
     </div>
     <div class="about-block">
       <h2>About</h2>

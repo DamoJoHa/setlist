@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+A semi-up-to-date live site can be found at https://setlist-30db6518e8ff.herokuapp.com/ . Rails app centered around live music events in local communities.  WIP, mostly functioning as a sandbox for anything I find myself interested in.  

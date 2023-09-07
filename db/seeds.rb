@@ -47,7 +47,7 @@ puts "Created owner account"
   puts "#{user.username} Created"
   act = Act.new
   act.name = Faker::TvShows::RickAndMorty.character
-  act.description = Faker::Quotes::Shakespeare.hamlet_quote
+  act.description = Faker::Books::Lovecraft.paragraph(sentence_count: 4)
   act.genre = GENRES.sample
   act.user = user
   act.save
@@ -86,7 +86,7 @@ Venue.all.each do |venue|
     event.end_time = event.start_time + 7200
     event.act = ACTS.sample
     event.venue = venue
-    event.description = Faker::Quote.famous_last_words
+    event.description = Faker::Books::Lovecraft.paragraph(sentence_count: 4)
     event.title = Faker::Book.title
     event.save
     puts "Event '#{event.title}' created"

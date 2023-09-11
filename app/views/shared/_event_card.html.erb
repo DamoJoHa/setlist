@@ -1,0 +1,5 @@
+<li class="event-card">
+  <p class="event-card-name"><%= event.title %></p>
+  <div class="event-card-location"><i class="fa-solid fa-location-dot"></i> <%= link_to event.venue.name, venue_path(event.venue) %></div>
+  <p class="event-card-date-time"><%= event.start_date_time %></p>
+</li>

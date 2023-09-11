@@ -18,7 +18,6 @@ body {
   background-color: $gray;
   margin: 0px;
   font-family: $body-font;
-
 }
 
 .container-custom {
@@ -40,7 +39,7 @@ body {
 }
 
 .wide-column {
-  width: 85% !important;
+  width: 1200px !important;
 }
 
 .hidden {
@@ -64,6 +63,10 @@ a {
 .sticky {
   position: sticky !important;
   top: 85px;
+}
+
+.padded {
+  padding: 24px;
 }
 
 #map {

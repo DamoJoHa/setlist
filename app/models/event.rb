@@ -8,6 +8,11 @@ class Event < ApplicationRecord
     start_time.localtime.strftime('%a %d %B, %Y')
   end
 
+  def start_date_time
+    start_time.localtime.strftime('%d %b, %H:%M')
+
+  end
+
   def local_start_time
     start_time.localtime.strftime('%H:%M')
   end

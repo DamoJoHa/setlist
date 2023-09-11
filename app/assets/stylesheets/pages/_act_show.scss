@@ -1,0 +1,12 @@
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 !important;
+}
+
+.events {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+}

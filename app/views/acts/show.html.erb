@@ -14,11 +14,12 @@
       <% end %>
     </div>
   </div>
-  <div>
-    <ul class="events">
+  <div class="fixed-column">
+    <h2>Upcoming Events</h2>
+    <div class="events">
       <% @act.events.each do |event| %>
-        <%= render "shared/event_card" , event: event%>
+        <%= render "shared/event_card" , event: event %>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>

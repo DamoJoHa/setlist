@@ -1,17 +1,32 @@
 <div class="centered-column wide-column two-column">
   <div class="padded">
-    <h1><%= @act.name %></h1>
-    <p><%= @act.follower_count %> Following</p>
-    <div class="favorite-block">
-      <% if @act.users.include?(current_user) %>
-        <%= link_to remove_favorite_act_path(@act) do %>
-          <i class="fa-solid fa-heart"></i>
+    <div class="title-with-favorites">
+      <div>
+        <h1><%= @act.name %></h1>
+        <p>
+          <% if @act.follower_count === 1 %>
+            1 Follower
+          <% else %>
+            <%= @act.follower_count %> Followers
+          <% end %>
+        </p>
+      </div>
+      <%# The below could maybe be replaced with JS.  So many page reloads is not ideal %>
+      <div class="favorite-block">
+        <% if @act.users.include?(current_user) %>
+          <%= link_to remove_favorite_act_path(@act) do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to add_favorite_act_path(@act) do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
         <% end %>
-      <% else %>
-        <%= link_to add_favorite_act_path(@act) do %>
-          <i class="fa-regular fa-heart"></i>
-        <% end %>
-      <% end %>
+      </div>
+    </div>
+    <div>
+      <h2>About</h2>
+      <p><%= @act.description %></p>
     </div>
   </div>
   <div class="fixed-column">

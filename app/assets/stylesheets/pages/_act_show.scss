@@ -22,3 +22,16 @@
   height: calc(100vh - 186.5px);
   overflow-y: scroll;
 }
+
+.title-with-favorites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  i {
+    font-size: 40px;
+    transition: ease-in .2s;
+  }
+  i:hover {
+    scale: 110%;
+  }
+}

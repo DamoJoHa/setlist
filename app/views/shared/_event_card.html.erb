@@ -1,10 +1,11 @@
-<% 10.times do %>
 <%=  link_to event_path(event) do %>
   <div class="event-card rounded">
     <p class="event-card-name"><%= event.title %></p>
     <%# If the below is a link, it messes with link structure stuff.  Replace with JS %>
     <div class="event-card-location"><i class="fa-solid fa-location-dot"></i> <%= event.venue.name %></div>
-    <p class="event-card-date-time"><%= event.start_date_time %></p>
+    <div class="square-date-box event-card-date-time">
+      <p class="date-head"><%= event.start_time.localtime.strftime('%d %b') %></p>
+      <p class ="time-head"><%= event.local_start_time %> - <%= event.local_end_time %></p>
+    </div>
   </div>
-<% end %>
 <% end %>

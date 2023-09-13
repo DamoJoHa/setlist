@@ -10,6 +10,7 @@
   border: 1px solid $purple;
   background-color: $off-white;
   color: black;
+  align-items: center;
 }
 
 .event-card:hover {
@@ -32,7 +33,5 @@
 
 .event-card-date-time {
   grid-area: b;
-  font-family: $body-font;
-  margin: auto 0;
-  text-align: right;
+  justify-self: right;
 }

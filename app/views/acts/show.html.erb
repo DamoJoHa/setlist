@@ -18,11 +18,13 @@
       </div>
     </div>
     <div>
-      <h2>About</h2>
-      <p><%= @act.description %></p>
+      <div class="padded">
+        <h2 class="orange-ul">About</h2>
+        <p><%= @act.description %></p>
+      </div>
       <div class="stats-grid rounded">
         <%# Having these specific stats maybe doesn't make sense? Total shows?  Average show rating (when that's implemented)? %>
-        <div class="grid-followers">
+        <div class="grid-followers top-grid left-grid">
           <h3>Followers</h3>
           <p>
             <% if @act.follower_count === 0 %>
@@ -32,15 +34,15 @@
             <% end %>
           </p>
         </div>
-        <div class="grid-genre">
+        <div class="grid-genre top-grid right-grid">
           <h3>Genre</h3>
           <p><%= @act.genre %></p>
         </div>
-        <div class="grid-active">
+        <div class="grid-active bot-grid left-grid">
           <h3>Active Since</h3>
           <p><%= @act.created_at.strftime("%-d %b, %Y") %></p>
         </div>
-        <div class="grid-owner">
+        <div class="grid-owner bot-grid right-grid">
           <h3>Owner</h3>
           <p><%= @act.user.username %></p>
         </div>

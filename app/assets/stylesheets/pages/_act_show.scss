@@ -27,10 +27,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 40px;
+
   i {
     font-size: 40px;
     transition: ease-in .2s;
   }
+
   i:hover {
     scale: 110%;
   }
@@ -41,7 +44,36 @@
   grid-template-areas:
     "a b"
     "c d";
+  grid-template-columns: 1fr 1fr;
   text-align: center;
+  background-color: $lightgray;
+  padding: 16px;
+
+  .top-grid {
+    border-bottom: 1px solid $orange;
+
+    h3 {
+      margin: 0 0 16px 0;
+    }
+  }
+
+  .bot-grid {
+    border-top: 1px solid $orange;
+    h3 {
+      margin: 16px 0 0 0;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+  }
+
+  .left-grid {
+    border-right: 1px solid $orange;
+  }
+
+  .right-grid {
+    border-left: 1px solid $orange;
+  }
 
   .grid-followers {
     grid-area: a;
@@ -51,7 +83,11 @@
     grid-area: b;
   }
 
-  .grid-created {
+  .grid-active {
+    grid-area: c;
+  }
 
+  .grid-owner {
+    grid-area: d;
   }
 }

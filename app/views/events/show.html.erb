@@ -15,7 +15,7 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="rsvp-block rounded sticky">
-      <h2>RSVP</h2>
+      <h2 class="orange-ul">RSVP</h2>
       <% if @event.user_count == 0 %>
         <div>
           <p>No one is attending yet.</p>
@@ -32,11 +32,11 @@
 
     </div>
     <div class="about-block">
-      <h2>About</h2>
+      <h2 class="orange-ul">About</h2>
       <p><%= @event.description %></p>
     </div>
     <div class="extra-block">
-      <h2>Meet the act!</h2>
+      <h2 class="orange-ul">Meet the act!</h2>
       <p><%= @event.act.description %></p>
     </div>
     <div id="map" class="map-block rounded" data-map-target="map"></div>

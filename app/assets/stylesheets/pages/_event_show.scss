@@ -21,10 +21,9 @@ h1 {
 }
 
 .square-date-box {
-  color: $off-white;
   height: 120px;
   width: 120px;
-  background-color: $gray-shadow;
+  background-color: $orange-shadow;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -49,19 +48,21 @@ h1 {
 
   h2 {
     margin: 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid $orange;
   }
 
   .rsvp-block {
     grid-area: b;
     background-color: $darkgray;
-    color: $off-white;
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 24px;
 
     h2, p {
+      color: $off-white;
       margin: 0px !important;
       line-height: 2;
     }
@@ -79,7 +80,7 @@ h1 {
     width: 300px;
     min-height: 400px;
   }
-  
+
   .extra-block {
     grid-area: d;
     margin-left: 24px;

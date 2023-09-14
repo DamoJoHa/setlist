@@ -35,3 +35,23 @@
     scale: 110%;
   }
 }
+
+.stats-grid {
+  display: grid;
+  grid-template-areas:
+    "a b"
+    "c d";
+  text-align: center;
+
+  .grid-followers {
+    grid-area: a;
+  }
+
+  .grid-genre {
+    grid-area: b;
+  }
+
+  .grid-created {
+
+  }
+}

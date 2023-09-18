@@ -50,7 +50,7 @@
     <h2>Upcoming Events</h2>
     <div class="events">
       <% @act.events.each do |event| %>
-        <%= render "shared/event_card" , event: event %>
+        <%= render "shared/event_card" , event: event, draw_acts: false, draw_venues: true %>
       <% end %>
     </div>
   </div>

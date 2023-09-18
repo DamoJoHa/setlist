@@ -2,7 +2,15 @@
   <div class="event-card rounded">
     <p class="event-card-name"><%= event.title %></p>
     <%# If the below is a link, it messes with link structure stuff.  Replace with JS %>
-    <div class="event-card-location"><i class="fa-solid fa-location-dot"></i> <%= event.venue.name %></div>
+    <div class="event-card-info">
+      <%# Extra divs enforce 1 per line, assuming I ever ask for both %>
+      <% if draw_venues %>
+        <div><i class="fa-solid fa-location-dot"></i> <%= event.venue.name %></div>
+      <% end %>
+      <% if draw_acts %>
+        <div><i class="fa-solid fa-guitar"></i> <%= event.act.name %></div>
+      <% end %>
+    </div>
     <div class="square-date-box event-card-date-time">
       <p class="date-head"><%= event.start_time.localtime.strftime('%d %b') %></p>
       <p class ="time-head"><%= event.local_start_time %> - <%= event.local_end_time %></p>

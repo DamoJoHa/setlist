@@ -17,11 +17,16 @@
         <% end %>
       </div>
     </div>
-    <ul class="events">
-      <% @venue.events.each do |event| %>
-        <li><%= event.title %></li>
-      <% end %>
-    </ul>
+    <div class="small-events-block rounded">
+      <h2>Events</h2>
+      <div class="events short-events">
+        <% @venue.events.each do |event| %>
+        <% 2.times do %>
+          <%= render "shared/event_card" , event: event, draw_acts: true, draw_venues: false %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div id="map" class="map-block sticky" data-map-target="map"></div>
 </div>

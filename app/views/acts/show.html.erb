@@ -1,9 +1,7 @@
 <div class="centered-column wide-column two-column">
   <div class="padded">
     <div class="title-with-favorites">
-      <div>
-        <h1><%= @act.name %></h1>
-      </div>
+      <h1><%= @act.name %></h1>
       <%# The below could maybe be replaced with JS.  So many page reloads is not ideal %>
       <div class="favorite-block">
         <% if @act.users.include?(current_user) %>
@@ -17,38 +15,36 @@
         <% end %>
       </div>
     </div>
-    <div>
-      <div class="padded">
-        <h2 class="orange-ul">About</h2>
-        <p><%= @act.description %></p>
-      </div>
-      <div class="stats-grid rounded">
-        <%# Having these specific stats maybe doesn't make sense? Total shows?  Average show rating (when that's implemented)? %>
-        <div class="grid-followers top-grid left-grid">
-          <h3>Followers</h3>
-          <p>
-            <% if @act.follower_count === 0 %>
-              None
-            <% else %>
-              <%= @act.follower_count %>
-            <% end %>
-          </p>
-        </div>
-        <div class="grid-genre top-grid right-grid">
-          <h3>Genre</h3>
-          <p><%= @act.genre %></p>
-        </div>
-        <div class="grid-active bot-grid left-grid">
-          <h3>Active Since</h3>
-          <p><%= @act.created_at.strftime("%-d %b, %Y") %></p>
-        </div>
-        <div class="grid-owner bot-grid right-grid">
-          <h3>Owner</h3>
-          <p><%= @act.user.username %></p>
-        </div>
-      </div>
-      <%# Could put contact form here? %>
+    <div class="padded">
+      <h2 class="orange-ul">About</h2>
+      <p><%= @act.description %></p>
     </div>
+    <div class="stats-grid rounded">
+      <%# Having these specific stats maybe doesn't make sense? Total shows?  Average show rating (when that's implemented)? %>
+      <div class="grid-followers top-grid left-grid">
+        <h3>Followers</h3>
+        <p>
+          <% if @act.follower_count === 0 %>
+            None
+          <% else %>
+            <%= @act.follower_count %>
+          <% end %>
+        </p>
+      </div>
+      <div class="grid-genre top-grid right-grid">
+        <h3>Genre</h3>
+        <p><%= @act.genre %></p>
+      </div>
+      <div class="grid-active bot-grid left-grid">
+        <h3>Active Since</h3>
+        <p><%= @act.created_at.strftime("%-d %b, %Y") %></p>
+      </div>
+      <div class="grid-owner bot-grid right-grid">
+        <h3>Owner</h3>
+        <p><%= @act.user.username %></p>
+      </div>
+    </div>
+    <%# Could put contact form here? %>
   </div>
   <div class="fixed-column">
     <h2>Upcoming Events</h2>

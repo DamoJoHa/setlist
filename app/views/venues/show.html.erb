@@ -1,19 +1,27 @@
-<div class="centered-column wide-column">
-  <h1><%= @venue.name %></h1>
-  <ul class="events">
-    <% @venue.events.each do |event| %>
-      <li><%= event.title %></li>
-    <% end %>
-  </ul>
-  <div class="favorite-block">
-    <% if @venue.users.include?(current_user) %>
-      <%= link_to remove_favorite_venue_path(@venue) do %>
-        <i class="fa-solid fa-heart"></i>
+<div class="centered-column wide-column two-column"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="padded">
+    <div class="title-with-favorites">
+      <h1><%= @venue.name %></h1>
+      <div class="favorite-block">
+        <% if @venue.users.include?(current_user) %>
+          <%= link_to remove_favorite_venue_path(@venue) do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to add_favorite_venue_path(@venue) do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <ul class="events">
+      <% @venue.events.each do |event| %>
+        <li><%= event.title %></li>
       <% end %>
-    <% else %>
-      <%= link_to add_favorite_venue_path(@venue) do %>
-        <i class="fa-regular fa-heart"></i>
-      <% end %>
-    <% end %>
+    </ul>
   </div>
+  <div id="map" class="map-block sticky" data-map-target="map"></div>
 </div>

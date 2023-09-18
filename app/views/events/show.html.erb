@@ -24,6 +24,7 @@
       <% else %>
         <p><%= @event.user_count %> Attending</p>
       <% end %>
+      <%# This should eventually be replaced with JS, though that sounds like a headache %>
       <% if @event.users.include?(current_user) %>
         <%= link_to "Cancel", remove_attend_path(@event), class: "button-wide button-pink" %>
       <% else %>
@@ -39,6 +40,6 @@
       <h2 class="orange-ul">Meet the act!</h2>
       <p><%= @event.act.description %></p>
     </div>
-    <div id="map" class="map-block rounded" data-map-target="map"></div>
+    <div id="map" data-map-target="map" class="map-block sticky"></div>
   </div>
 </div>

@@ -7,7 +7,8 @@ h1 {
 .title-row {
   display: grid;
   grid-template-columns: 1fr 120px;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .title-column {

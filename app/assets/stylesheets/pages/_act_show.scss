@@ -27,15 +27,25 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 40px;
-
-  i {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  a {
+    i {
     font-size: 40px;
     transition: ease-in .2s;
+   }
+
+   i:hover {
+    scale: 110%;
+  }
   }
 
-  i:hover {
-    scale: 110%;
+  p {
+    font-size: 16px;
+    font-family: $body-font;
+    // i {
+    //   font-size: 16px !important;
+    // }
   }
 }
 

@@ -1,0 +1,20 @@
+.small-events-block {
+  background-color: $gray;
+  padding: 16px;
+  h2 {
+    color: $off-white;
+    margin: 0;
+    padding-bottom: 16px;
+    font-size: 32px;
+    border-bottom: 2px solid $orange;
+  }
+}
+
+.short-events {
+  height: auto !important;
+  max-height: 300px;
+}
+
+.purple-border-left {
+  border-left: 2px solid $purple;
+}

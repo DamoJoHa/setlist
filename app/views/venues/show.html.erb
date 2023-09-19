@@ -1,19 +1,38 @@
-<div class="centered-column wide-column">
-  <h1><%= @venue.name %></h1>
-  <ul class="events">
-    <% @venue.events.each do |event| %>
-      <li><%= event.title %></li>
-    <% end %>
-  </ul>
-  <div class="favorite-block">
-    <% if @venue.users.include?(current_user) %>
-      <%= link_to remove_favorite_venue_path(@venue) do %>
-        <i class="fa-solid fa-heart"></i>
-      <% end %>
-    <% else %>
-      <%= link_to add_favorite_venue_path(@venue) do %>
-        <i class="fa-regular fa-heart"></i>
-      <% end %>
-    <% end %>
+<div class="centered-column wide-column two-column"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="padded">
+    <div class="title-with-favorites orange-ul">
+      <div class="title-column">
+        <h1><%= @venue.name %></h1>
+        <%# Probably move address stuff into map dot eventually %>
+        <div><i class="fa-solid fa-location-dot"></i> <%= link_to @venue.address, @venue.google_address, target: "_blank" %></div>
+      </div>
+      <div class="favorite-block">
+        <% if @venue.users.include?(current_user) %>
+          <%= link_to remove_favorite_venue_path(@venue) do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to add_favorite_venue_path(@venue) do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="small-events-block rounded">
+      <h2>Events</h2>
+      <div class="events short-events">
+        <% @venue.events.each do |event| %>
+          <%= render "shared/event_card" , event: event, draw_acts: true, draw_venues: false %>
+        <% end %>
+      </div>
+    </div>
+    <div class="about-block padded">
+      <h2 class="orange-ul">About</h2>
+      <p><%= @venue.description %></p>
+    </div>
   </div>
+  <div id="map" class="map-block sticky sharp purple-border-left" data-map-target="map"></div>
 </div>

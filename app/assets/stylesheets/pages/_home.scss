@@ -20,12 +20,14 @@
   background: radial-gradient(2000px, $off-white-shadow, $pink-shadow-soft);
   justify-content: space-between;
   align-items: center;
+
   h2 {
     font-size: 40px;
     margin: 0;
   }
+
   div {
-    height: -webkit-fill-available;
+    height: 100%;
     border-left: 1px solid $purple;
     padding-left: 6px;
     margin-left: 6px;
@@ -34,6 +36,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .time-text{
     font-size: 20px;
     font-family: inherit;
@@ -52,8 +55,7 @@
   box-shadow: 0 0 12px $pink !important;
 }
 
-#map {
+.home-map {
   width: 600px;
   height: 90vh;
-  border-radius: 4px;
 }

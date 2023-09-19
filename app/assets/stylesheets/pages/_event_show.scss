@@ -7,6 +7,8 @@ h1 {
 .title-row {
   display: grid;
   grid-template-columns: 1fr 120px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .title-column {
@@ -20,10 +22,9 @@ h1 {
 }
 
 .square-date-box {
-  color: $off-white;
   height: 120px;
   width: 120px;
-  background-color: $gray-shadow;
+  background-color: $orange-shadow;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -40,30 +41,47 @@ h1 {
 }
 
 .event-show-grid {
-  margin-top: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr 250px;
+  grid-template-columns: auto auto 250px;
   grid-template-areas:
-    "a a b";
+    "a a b"
+    "c d b";
+
   h2 {
     margin: 16px 0;
   }
+
   .rsvp-block {
     grid-area: b;
     background-color: $darkgray;
-    color: $off-white;
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 24px;
+
     h2, p {
+      color: $off-white;
       margin: 0px !important;
       line-height: 2;
     }
   }
+
   .about-block {
     grid-area: a;
     padding: 24px;
+    padding-left: 0;
+    min-height: 224px;
+  }
+
+  .map-block {
+    grid-area: c;
+    width: 300px;
+    min-height: 400px;
+  }
+
+  .extra-block {
+    grid-area: d;
+    margin-left: 24px;
   }
 }

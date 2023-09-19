@@ -1,5 +1,5 @@
-<div class="centered-column wide-column">
-  <div class="title-row">
+<div class="centered-column">
+  <div class="title-row orange-ul">
     <div class="title-column">
       <h1><%= @event.title %></h1>
       <div><i class="fa-solid fa-guitar"></i> <%= link_to @event.act.name, act_path(@event.act) %></div>
@@ -10,9 +10,12 @@
       <p class ="time-head"><%= @event.local_start_time %> - <%= @event.local_end_time %></p>
     </div>
   </div>
-  <div class="event-show-grid">
+  <div class="event-show-grid"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     <div class="rsvp-block rounded sticky">
-      <h2>RSVP</h2>
+      <h2 class="orange-ul">RSVP</h2>
       <% if @event.user_count == 0 %>
         <div>
           <p>No one is attending yet.</p>
@@ -21,6 +24,7 @@
       <% else %>
         <p><%= @event.user_count %> Attending</p>
       <% end %>
+      <%# This should eventually be replaced with JS, though that sounds like a headache %>
       <% if @event.users.include?(current_user) %>
         <%= link_to "Cancel", remove_attend_path(@event), class: "button-wide button-pink" %>
       <% else %>
@@ -29,8 +33,13 @@
 
     </div>
     <div class="about-block">
-      <h2>About</h2>
+      <h2 class="orange-ul">About</h2>
       <p><%= @event.description %></p>
     </div>
+    <div class="extra-block">
+      <h2 class="orange-ul">Meet the act!</h2>
+      <p><%= @event.act.description %></p>
+    </div>
+    <div id="map" data-map-target="map" class="map-block sticky"></div>
   </div>
 </div>

@@ -1,0 +1,44 @@
+<div class="centered-column">
+  <h1>My Profile</h1>
+  <div class="stats-grid rounded">
+    <div class="grid-a top-grid left-grid">
+      <h3>Username</h3>
+      <p><%= @user.username %></p>
+    </div>
+    <div class="grid-b top-grid right-grid">
+      <h3>Email</h3>
+      <p><%= @user.email %></p>
+    </div>
+    <div class="grid-c bot-grid left-grid">
+      <h3>Active since</h3>
+      <p><%= @user.created_at.strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="grid-d bot-grid right-grid">
+      <h3>What?</h3>
+      <p>Something</p>
+    </div>
+  </div>
+  <div class="flex-box">
+  </div>
+
+  <div class="flex-box rounded orange-box">
+    <div class="rounded">
+      <h2>My Band</h2>
+      <% if @user.act %>
+        <%= link_to @user.act.name, act_path(@user.act) %>
+      <% else %>
+        <p>Create an act (create this route)</p>
+      <% end %>
+    </div>
+    <div class="rounded">
+      <h2>My Venue</h2>
+      <% if @user.venue %>
+        <%= link_to @user.venue.name, act_path(@user.venue) %>
+      <% else %>
+        <p>Create a venue (create this route)</p>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+
+</div>

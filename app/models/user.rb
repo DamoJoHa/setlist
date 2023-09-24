@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_one :act
+  has_one :venue
+  
   has_many :users_events
   has_many :events, through: :users_events
 

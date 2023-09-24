@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "events#index"
+  get "/profile", to: "pages#profile", as: "profile"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :events, only: [:show]
